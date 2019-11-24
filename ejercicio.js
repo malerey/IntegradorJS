@@ -63,8 +63,21 @@ while (volverAlMenuPrincipal == "SI") {
             repetirOperacion = prompt(`Desea realizar otra busqueda?`);
         }
     }
+    // if (accion == "LISTAR") {
+    //   alert(
+    //     `
+    //     `
+    //   )
+
+    // }
     if (accion == "SALIR") {
-        volverAlMenuPrincipal = "NO";
-    }
+        let confirma = prompt('Confirma que quiere salir del programa SI - NO?')
+        if (confirma === "SI") {
+            alert('Muchas gracias por su atención')
+            volverAlMenuPrincipal = "NO"
+        } else {
+            volverAlMenuPrincipal = "SI"
+        };
+    };
 }
 console.log(listaUsuarios);
