@@ -60,7 +60,7 @@ let listaUsuarios = [
         if (tipoDeDato == "ID" || "Nombre" || "Celular" || "Email") {
             for (let i = 0; i < listaUsuarios.length; i++) {
                 for (let j = 0; j < listaUsuarios[i].length; j++) {
-                    if (listaUsuarios[i][j] === valorABuscar) {
+                    if (listaUsuarios[i][j] == valorABuscar) {
                         alert(`El usuario encontrado es el siguiente:
                     ${listaUsuarios[i]}`)
                     usuarioEncontrado = true;
