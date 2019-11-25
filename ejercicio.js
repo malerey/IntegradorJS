@@ -21,10 +21,13 @@ while (volverAlMenuPrincipal == "SI") {
     ➡️ [MODIFICAR] un usuario 📝
     ➡️ [ELIMINAR] un usuario ❌ 
     ➡️ [SALIR] del programa 👋`);
+    
+    volverAlMenuPrincipal = volverAlMenuPrincipal.toUpperCase()
+    //...............AGREGAR..............
 
     if (accion == "AGREGAR") {
         let repetirOperacion = "SI";
-
+        repetirOperacion = repetirOperacion.toUpperCase()
         while (repetirOperacion == 'SI') {
             nombre = prompt(" 📓 Ingrese el nombre del usuario");
             telefono = prompt(" 📞 Ingrese el teléfono del usuario");
@@ -37,7 +40,7 @@ while (volverAlMenuPrincipal == "SI") {
         EMAIL: ${email}
         Desea confirmar SI -NO ?
         `);
-
+            respuesta = respuesta.toUpperCase()
             if (respuesta == "SI") {
                 listaUsuarios.push(nuevoUsuario);
                 alert("El usuario fue guardado exitosamente!")
@@ -49,6 +52,7 @@ while (volverAlMenuPrincipal == "SI") {
         }
 
     }
+    //...............OBTENER..............
 
     if (accion == "OBTENER") {
 
@@ -72,29 +76,33 @@ while (volverAlMenuPrincipal == "SI") {
                 if (usuarioEncontrado == false) {
                     alert("No existe el usuario buscado");
                 }
-
             }
 
             repetirOperacion = prompt(`Desea realizar otra busqueda?`);
-
         }
     }
+
+    //...............LISTAR..............
+
 
     if (accion == "LISTAR") {
         let mostrarUsuarios = "";
         for (let i = 0; i < listaUsuarios.length; i++) {
             mostrarUsuarios = mostrarUsuarios +
                 `
+                ----------------------------------
                 ID = ${listaUsuarios[i][0]}
                 NOMBRE = ${listaUsuarios[i][1]}
                 TELEFONO = ${listaUsuarios[i][2]}
                 MAIL = ${listaUsuarios[i][3]}
-                -----------
+                ----------------------------------
                 `;
         }
         alert(mostrarUsuarios);
 
     }
+
+    //...............ELIMINAR..............
 
 
     if (accion == "ELIMINAR") {
@@ -126,6 +134,7 @@ while (volverAlMenuPrincipal == "SI") {
             repetirOperacion = prompt("Desea repetir la operacion? (SI-NO)");
         }
     }
+    //...............MODIFICAR..............
 
     // if (accion == "MODIFICAR") {
     //     let repetirOperacion = "SI";
@@ -156,6 +165,7 @@ while (volverAlMenuPrincipal == "SI") {
     //         repetirOperacion = prompt("Desea repetir la operacion? (SI-NO)");
     //     }
     // }
+    //...............SALIR..............
 
     if (accion == "SALIR") {
         let confirma = prompt('Confirma que quiere salir del programa SI - NO?')
