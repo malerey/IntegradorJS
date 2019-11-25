@@ -149,46 +149,50 @@ while (volverAlMenuPrincipal == "SI") {
                  ${listaUsuarios[i][1]}  ${listaUsuarios[i][2]}  ${listaUsuarios[i][3]}
                                                                                             `;
             }
-            alert(todosLosNombres)
+            alert(todosLosNombres); 
+
             let usuarioAModificar = prompt(`Indique el ID del usuario que desea modificar:
                                   ${todosLosNombres}`);
+
             for (i = 0; i < listaUsuarios.length; i++) {
                 if (listaUsuarios[i][0] == usuarioAModificar) {
-                    let datoAModificar = prompt(`Actualmente los datos del usuario son:
+                        usuarioEncontrado = "true";
+                        (`Actualmente los datos del usuario son:
                         ID: ${listaUsuarios[i][0]}
                         NOMBRE: ${listaUsuarios[i][1]}
                         TELEFONO: ${listaUsuarios[i][2]}
                         MAIL: ${listaUsuarios[i][3]}
-                        Qué tipo de dato desea modificar?
                         `)
-                    if (datoAModificar == "Nombre") {
-                        let nombreAModificar = prompt(`Qué valor desea asignar al Nombre?`)
-                        listaUsuarios[i][1] = nombreAModificar
-                    }
-                    if (datoAModificar == "Telefono") {
-                        let telefonoAModificar = prompt(`Qué valor desea asignar al Teléfono?`)
-                        listaUsuarios[i][2] = telefonoAModificar
-                    }
-                    if (datoAModificar == "E-mail") {
-                        let emailAModificar = prompt(`Qué valor desea asignar al E-mail?`)
-                        listaUsuarios[i][2] = emailAModificar
-                    }
-                    confirmarOperacion = prompt(`Los datos del usuario a modificar son:
-                        ID: ${listaUsuarios[i][0]}
-                        NOMBRE: ${listaUsuarios[i][1]}
-                        TELEFONO: ${listaUsuarios[i][2]}
-                        MAIL: ${listaUsuarios[i][3]}
-                        Este es el cambio que desea realizar?`)
-                    if (confirmarOperacion == "SI") {
+                        
+                    let   nombreModificado = prompt(" 📓 Ingrese el nombre del usuario");
+                    let   telefonoModificado = prompt(" 📞 Ingrese el teléfono del usuario");
+                    let   emailModificado = prompt(" 📫 Ingrese email del usuario");
+                    let   nuevoUsuario = [usuarioAModificar, nombreModificado, telefonoModificado, emailModificado];
+                    let   respuesta = prompt(`Los datos del usuario ingresado son:
+                    ID: ${usuarioAModificar}    
+                    NOMBRE: ${nombreModificado} 
+                    TELEFONO: ${telefonoModificado} 
+                    EMAIL: ${emailModificado}
+                    Desea confirmar SI -NO ?
+                    `);
+
+                    if (respuesta =="SI"){
+                        listaUsuarios[i] = nuevoUsuario;
                         alert("La operacion ha sido realizada exitosamente");
                     } else {
-                        alert("La operacion ha sido cancelada");
+                    alert("La operacion ha sido cancelada");
                     }
-                    repetirOperacion = prompt("Desea repetir la operacion? (SI-NO)");
                 }
+            }    
+                   
+            if (usuarioEncontrado == "false"){
+                alert("El usuario ingresado no existe");
             }
+                    
+            repetirOperacion = prompt("Desea repetir la operacion? (SI-NO)");           
         }
     }
+
     // ...............SALIR..............
     if (accion == "SALIR") {
         let confirma = prompt('Confirma que quiere salir del programa SI - NO?')
