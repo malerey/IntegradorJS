@@ -1,6 +1,6 @@
 ## Ejercicio Integrador Javascript
 
-Ada Primera Generacióm Online
+Ada Primera Generación Online
 
 Integrantes :
 
