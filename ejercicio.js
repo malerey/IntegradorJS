@@ -138,35 +138,35 @@ while (volverAlMenuPrincipal == "SI") {
     }
     //...............MODIFICAR..............
 
-    // if (accion == "MODIFICAR") {
-    //     let repetirOperacion = "SI";
-    //     let usuarioEncontrado = false;
-    //     while (repetirOperacion == "SI") {
-    //         let usuarioAModificar = prompt("Indique el ID del usuario que desea eliminar");
-    //         for (i = 0; i < listaUsuarios.length; i++) {
-    //             if (listaUsuarios[i][0] == usuarioAModificar) {
-    //                 confirmarOperacion = prompt(`Los datos del usuario a modificar son:
-    //             ID: ${listaUsuarios[i][0]}
-    //             NOMBRE: ${listaUsuarios[i][1]}
-    //             TELEFONO: ${listaUsuarios[i][2]}
-    //             MAIL: ${listaUsuarios[i][3]}
-    //             Desea continuar? (SI-NO)
-    //             `)
-    //                 if (confirmarOperacion == "SI") {
-    //                     prompt( "")
-    //                     alert("La operacion ha sido realizada exitosamente");
-    //                 } else {
-    //                     alert("La operacion ha sido cancelada");
-    //                 }
-    //                 usuarioEncontrado = "SI";
-    //             }
-    //         }
-    //         if (usuarioEncontrado == false) {
-    //             alert("El usuario ingresado no existe.");
-    //         }
-    //         repetirOperacion = prompt("Desea repetir la operacion? (SI-NO)");
-    //     }
-    // }
+    if (accion == "MODIFICAR") {
+        let repetirOperacion = "SI";
+        let usuarioEncontrado = false;
+        while (repetirOperacion == "SI") {
+            let usuarioAModificar = prompt("Indique el ID del usuario que desea eliminar");
+            for (i = 0; i < listaUsuarios.length; i++) {
+                if (listaUsuarios[i][0] == usuarioAModificar) {
+                    confirmarOperacion = prompt(`Los datos del usuario a modificar son:
+                ID: ${listaUsuarios[i][0]}
+                NOMBRE: ${listaUsuarios[i][1]}
+                TELEFONO: ${listaUsuarios[i][2]}
+                MAIL: ${listaUsuarios[i][3]}
+                Desea continuar? (SI-NO)
+                `)
+                    if (confirmarOperacion == "SI") {
+                        prompt( "")
+                        alert("La operacion ha sido realizada exitosamente");
+                    } else {
+                        alert("La operacion ha sido cancelada");
+                    }
+                    usuarioEncontrado = "SI";
+                }
+            }
+            if (usuarioEncontrado == false) {
+                alert("El usuario ingresado no existe.");
+            }
+            repetirOperacion = prompt("Desea repetir la operacion? (SI-NO)");
+        }
+    }
     //...............SALIR..............
 
     if (accion == "SALIR") {
