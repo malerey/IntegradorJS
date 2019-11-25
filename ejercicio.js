@@ -23,6 +23,8 @@ while (volverAlMenuPrincipal == "SI") {
     ➡️ [SALIR] del programa 👋`);
     
     volverAlMenuPrincipal = volverAlMenuPrincipal.toUpperCase()
+    accion = accion.toUpperCase()
+
     //...............AGREGAR..............
 
     if (accion == "AGREGAR") {
@@ -169,6 +171,8 @@ while (volverAlMenuPrincipal == "SI") {
 
     if (accion == "SALIR") {
         let confirma = prompt('Confirma que quiere salir del programa SI - NO?')
+        confirma = confirma.toUpperCase()
+        
         if (confirma == "SI") {
             alert('Muchas gracias por su atención')
             volverAlMenuPrincipal = "NO"
