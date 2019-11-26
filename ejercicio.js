@@ -29,7 +29,8 @@ while (volverAlMenuPrincipal == "SI") {
 
     if (accion == "AGREGAR") {
         let repetirOperacion = "SI";
-        while( repetirOperacion == "SI" ){  
+
+        while (repetirOperacion == "SI") {
             nombre = prompt(" 📓 Ingrese el nombre del usuario");
             telefono = prompt(" 📞 Ingrese el teléfono del usuario");
             email = prompt(" 📫 Ingrese email del usuario");
@@ -49,12 +50,13 @@ while (volverAlMenuPrincipal == "SI") {
                 alert("Los cambios no han sido guardados, se cancelo la operacion.");
             }
             repetirOperacion = prompt(`Desea agregar otro usuario? (SI-NO)`);
-        }
-         
-          ; 
+            repetirOperacion = repetirOperacion.toUpperCase()
         }
 
-    
+        ;
+    }
+
+
     //...............OBTENER..............
 
     if (accion == "OBTENER") {
@@ -83,6 +85,8 @@ while (volverAlMenuPrincipal == "SI") {
             }
 
             repetirOperacion = prompt(`Desea realizar otra busqueda?`);
+            repetirOperacion = repetirOperacion.toUpperCase()
+
         }
     }
 
@@ -94,14 +98,8 @@ while (volverAlMenuPrincipal == "SI") {
         let mostrarUsuarios = "";
         for (let i = 0; i < listaUsuarios.length; i++) {
             mostrarUsuarios = mostrarUsuarios +
-                `
-                  ----------------------------------
-                  ID = ${listaUsuarios[i][0]}
-                  NOMBRE = ${listaUsuarios[i][1]}
-                  TELEFONO = ${listaUsuarios[i][2]}
-                  MAIL = ${listaUsuarios[i][3]}
-                  ----------------------------------
-                  `;
+                `ID: ${listaUsuarios[i][0]};  NOMBRE: ${listaUsuarios[i][1]};  TELEFONO: ${listaUsuarios[i][2]};  MAIL: ${listaUsuarios[i][3]}
+`;
         }
         alert(mostrarUsuarios);
 
@@ -138,13 +136,14 @@ while (volverAlMenuPrincipal == "SI") {
                 alert("El usuario ingresado no existe.");
             }
             repetirOperacion = prompt("Desea eliminar otro usuario? (SI-NO)");
+            repetirOperacion = repetirOperacion.toUpperCase()
         }
     }
     //...............MODIFICAR..............
 
     if (accion == "MODIFICAR") {
         let repetirOperacion = "SI";
-        
+
         let usuarioEncontrado = false;
         while (repetirOperacion == "SI") {
             let todosLosNombres = ''
@@ -194,6 +193,7 @@ while (volverAlMenuPrincipal == "SI") {
             }
 
             repetirOperacion = prompt("Desea modificar otro usuario? (SI-NO)");
+            repetirOperacion = repetirOperacion.toUpperCase()
         }
     }
 
@@ -212,4 +212,3 @@ while (volverAlMenuPrincipal == "SI") {
 }
 
 console.log(listaUsuarios)
-
