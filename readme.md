@@ -12,4 +12,6 @@ Maria Abihaggle, Mendoza, https://github.com/mariaabi82
 
 Malú Martin, https://github.com/malumart
 
+https://github.com/Ceciliamorales24/IntegradorJS
+
 
