@@ -10,7 +10,7 @@ let nombre = [];
 let telefono = [];
 let email = [];
 let accion;
-let volverAlMenuPrincipal = "";
+let volverAlMenuPrincipal = "SI";
 
 while (volverAlMenuPrincipal == "SI") {
     accion = prompt(`✅ Seleccione una operacion 
@@ -28,8 +28,8 @@ while (volverAlMenuPrincipal == "SI") {
     //...............AGREGAR..............
 
     if (accion == "AGREGAR") {
-       
-        do{  
+        let repetirOperacion = "SI";
+        while( repetirOperacion == "SI" ){  
             nombre = prompt(" 📓 Ingrese el nombre del usuario");
             telefono = prompt(" 📞 Ingrese el teléfono del usuario");
             email = prompt(" 📫 Ingrese email del usuario");
@@ -48,10 +48,10 @@ while (volverAlMenuPrincipal == "SI") {
             } else {
                 alert("Los cambios no han sido guardados, se cancelo la operacion.");
             }
-            
+            repetirOperacion = prompt(`Desea agregar otro usuario? (SI-NO)`);
         }
          
-          while( repetirOperacion == "SI" ); 
+          ; 
         }
 
     
@@ -137,7 +137,7 @@ while (volverAlMenuPrincipal == "SI") {
             if (usuarioEncontrado == false) {
                 alert("El usuario ingresado no existe.");
             }
-            repetirOperacion = prompt("Desea repetir la operacion? (SI-NO)");
+            repetirOperacion = prompt("Desea eliminar otro usuario? (SI-NO)");
         }
     }
     //...............MODIFICAR..............
@@ -193,7 +193,7 @@ while (volverAlMenuPrincipal == "SI") {
                 alert("El usuario ingresado no existe");
             }
 
-            repetirOperacion = prompt("Desea repetir la operacion? (SI-NO)");
+            repetirOperacion = prompt("Desea modificar otro usuario? (SI-NO)");
         }
     }
 
