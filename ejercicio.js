@@ -10,9 +10,9 @@ let nombre = [];
 let telefono = [];
 let email = [];
 let accion;
-let volverAlMenuPrincipal = "SI";
 
-while (volverAlMenuPrincipal == "SI") {
+
+do {
     accion = prompt(`✅ Seleccione una operacion 
       --------------------------
       ➡️ [AGREGAR] un usuario 👤
@@ -22,7 +22,7 @@ while (volverAlMenuPrincipal == "SI") {
       ➡️ [ELIMINAR] un usuario ❌ 
       ➡️ [SALIR] del programa 👋`);
 
-    volverAlMenuPrincipal = volverAlMenuPrincipal.toUpperCase()
+
     accion = accion.toUpperCase()
 
     //...............AGREGAR..............
@@ -51,12 +51,9 @@ while (volverAlMenuPrincipal == "SI") {
             }
             repetirOperacion = prompt(`Desea agregar otro usuario? (SI-NO)`);
             repetirOperacion = repetirOperacion.toUpperCase()
-        }
+        };
 
-        ;
     }
-
-
     //...............OBTENER..............
 
     if (accion == "OBTENER") {
@@ -90,15 +87,13 @@ while (volverAlMenuPrincipal == "SI") {
         }
     }
 
-
     //...............LISTAR..............
-
 
     if (accion == "LISTAR") {
         let mostrarUsuarios = "";
         for (let i = 0; i < listaUsuarios.length; i++) {
             mostrarUsuarios = mostrarUsuarios +
-                `ID: ${listaUsuarios[i][0]};  NOMBRE: ${listaUsuarios[i][1]};  TELEFONO: ${listaUsuarios[i][2]};  MAIL: ${listaUsuarios[i][3]}
+                `ID: ${listaUsuarios[i][0]};  Nombre: ${listaUsuarios[i][1]};  Teléfono: ${listaUsuarios[i][2]};  email: ${listaUsuarios[i][3]}
 `;
         }
         alert(mostrarUsuarios);
@@ -146,25 +141,24 @@ while (volverAlMenuPrincipal == "SI") {
 
         let usuarioEncontrado = false;
         while (repetirOperacion == "SI") {
-            let todosLosNombres = ''
+            let mostrarUsuarios = ``;
             for (let i = 0; i < listaUsuarios.length; i++) {
-                todosLosNombres = todosLosNombres + `Los datos del usuario con id ${i} son:
-                 ${listaUsuarios[i][1]}  ${listaUsuarios[i][2]}  ${listaUsuarios[i][3]}
-                                                                                            `;
+                mostrarUsuarios = mostrarUsuarios +
+                    `ID: ${listaUsuarios[i][0]};  Nombre: ${listaUsuarios[i][1]};  Teléfono: ${listaUsuarios[i][2]};  email: ${listaUsuarios[i][3]}
+`;
             }
-            alert(todosLosNombres);
+            alert(mostrarUsuarios);
 
-            let usuarioAModificar = prompt(`Indique el ID del usuario que desea modificar:
-                                  ${todosLosNombres}`);
+            let usuarioAModificar = prompt(`Indique el ID del usuario que desea modificar: `);
 
             for (i = 0; i < listaUsuarios.length; i++) {
                 if (listaUsuarios[i][0] == usuarioAModificar) {
                     usuarioEncontrado = "true";
                     (`Actualmente los datos del usuario son:
                         ID: ${listaUsuarios[i][0]}
-                        NOMBRE: ${listaUsuarios[i][1]}
-                        TELEFONO: ${listaUsuarios[i][2]}
-                        MAIL: ${listaUsuarios[i][3]}
+                        Nombre: ${listaUsuarios[i][1]}
+                        Teléfono: ${listaUsuarios[i][2]}
+                        email: ${listaUsuarios[i][3]}
                         `)
 
                     let nombreModificado = prompt(" 📓 Ingrese el nombre del usuario");
@@ -173,10 +167,10 @@ while (volverAlMenuPrincipal == "SI") {
                     let nuevoUsuario = [usuarioAModificar, nombreModificado, telefonoModificado, emailModificado];
                     let respuesta = prompt(`Los datos del usuario ingresado son:
                     ID: ${usuarioAModificar}    
-                    NOMBRE: ${nombreModificado} 
-                    TELEFONO: ${telefonoModificado} 
-                    EMAIL: ${emailModificado}
-                    Desea confirmar SI -NO ?
+                    Nombre: ${nombreModificado} 
+                    Teléfono: ${telefonoModificado} 
+                    email: ${emailModificado}
+                    Desea confirmar los cambios SI/NO ?
                     `);
                     respuesta = respuesta.toUpperCase();
                     if (respuesta == "SI") {
@@ -194,11 +188,9 @@ while (volverAlMenuPrincipal == "SI") {
 
             repetirOperacion = prompt("Desea modificar otro usuario? (SI-NO)");
             repetirOperacion = repetirOperacion.toUpperCase()
+
         }
     }
-
-    // ...............SALIR..............
-
     if (accion == "SALIR") {
         let confirma = prompt('Confirma que quiere salir del programa SI - NO?')
         confirma = confirma.toUpperCase()
@@ -210,5 +202,7 @@ while (volverAlMenuPrincipal == "SI") {
         };
     };
 }
+while (accion != "SALIR")
+// ...............SALIR..............
 
 console.log(listaUsuarios)
