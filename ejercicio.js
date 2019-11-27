@@ -160,7 +160,7 @@ while (volverAlMenuPrincipal == "SI") {
             for (i = 0; i < listaUsuarios.length; i++) {
                 if (listaUsuarios[i][0] == usuarioAModificar) {
                     usuarioEncontrado = "true";
-                    (`Actualmente los datos del usuario son:
+                    alert(`Actualmente los datos del usuario son:
                         ID: ${listaUsuarios[i][0]}
                         NOMBRE: ${listaUsuarios[i][1]}
                         TELEFONO: ${listaUsuarios[i][2]}
