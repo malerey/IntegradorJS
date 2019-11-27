@@ -146,7 +146,7 @@ do {
                 mostrarUsuarios = mostrarUsuarios +
                     `ID: ${listaUsuarios[i][0]};  Nombre: ${listaUsuarios[i][1]};  Teléfono: ${listaUsuarios[i][2]};  email: ${listaUsuarios[i][3]}
 `
-         }
+            }
             alert(mostrarUsuarios);
 
             let usuarioAModificar = prompt(`Indique el ID del usuario que desea modificar: `);
@@ -160,25 +160,73 @@ do {
                         Teléfono: ${listaUsuarios[i][2]}
                         email: ${listaUsuarios[i][3]}
                         `)
+                    let campoAModificar = prompt("Desea modificar Nombre, Teléfono o email?");
+                    campoAModificar = campoAModificar.toUpperCase()
+                    switch (campoAModificar) {
+                        case "NOMBRE":
+                            let nuevoNombre = prompt(`Ingrese el nuevo Nombre`);
+                            let confirmaNombre = prompt(`El nombre ingresado es ${nuevoNombre}. Desea confirmar el cambio SI/NO?`)
+                            confirmaNombre = confirmaNombre.toUpperCase()
+                            if (confirmaNombre == 'SI') {
+                                listaUsuarios[i][1] = nuevoNombre;
+                                alert(`Datos actualizados del usuario:
+                                ID: ${listaUsuarios[i][0]}
+                                Nombre: ${listaUsuarios[i][1]}
+                                Teléfono: ${listaUsuarios[i][2]}
+                                email: ${listaUsuarios[i][3]}
+                                `)
+                            }
 
-                    let nombreModificado = prompt(" 📓 Ingrese el nombre del usuario");
-                    let telefonoModificado = prompt(" 📞 Ingrese el teléfono del usuario");
-                    let emailModificado = prompt(" 📫 Ingrese email del usuario");
-                    let nuevoUsuario = [usuarioAModificar, nombreModificado, telefonoModificado, emailModificado];
-                    let respuesta = prompt(`Los datos del usuario ingresado son:
-                    ID: ${usuarioAModificar}    
-                    Nombre: ${nombreModificado} 
-                    Teléfono: ${telefonoModificado} 
-                    email: ${emailModificado}
-                    Desea confirmar los cambios SI/NO ?
-                    `);
-                    respuesta = respuesta.toUpperCase();
-                    if (respuesta == "SI") {
-                        listaUsuarios[i] = nuevoUsuario;
-                        alert("La operacion ha sido realizada exitosamente");
-                    } else {
-                        alert("La operacion ha sido cancelada");
+                            break;
+                        case "TELEFONO":
+                            let nuevoTelefono = prompt(`Ingrese el nuevo Teléfono`);
+                            let confirmaTelefono = prompt(`El nombre ingresado es ${nuevoTelefono}. Desea confirmar el cambio SI/NO?`)
+                            confirmaTelefono = confirmaTelefono.toUpperCase()
+                            if (confirmaTelefono == 'SI') {
+                                listaUsuarios[i][2] = nuevoTelefono;
+                                alert(`Datos actualizados del usuario:
+                                ID: ${listaUsuarios[i][0]}
+                                Nombre: ${listaUsuarios[i][1]}
+                                Teléfono: ${listaUsuarios[i][2]}
+                                email: ${listaUsuarios[i][3]}
+                                `)
+                            }
+                            break;
+                         case "EMAIL":   
+                         let nuevoMail = prompt(`Ingrese el nuevo email`);
+                            let confirmaMail = prompt(`El email ingresado es ${nuevoMail}. Desea confirmar el cambio SI/NO?`)
+                            confirmaMail = confirmaMail.toUpperCase()
+                            if (confirmaMail == 'SI') {
+                                listaUsuarios[i][3] = nuevoMail;
+                                alert(`Datos actualizados del usuario:
+                                ID: ${listaUsuarios[i][0]}
+                                Nombre: ${listaUsuarios[i][1]}
+                                Teléfono: ${listaUsuarios[i][2]}
+                                email: ${listaUsuarios[i][3]}
+                                `)
+                            }
+                            break;
+                            default: alert(`No se reconoce el campo a modificar`);
+                           
                     }
+                    // let nombreModificado = prompt(" 📓 Ingrese el nombre del usuario");
+                    // let telefonoModificado = prompt(" 📞 Ingrese el teléfono del usuario");
+                    // let emailModificado = prompt(" 📫 Ingrese email del usuario");
+                    // let nuevoUsuario = [usuarioAModificar, nombreModificado, telefonoModificado, emailModificado];
+                    // let respuesta = prompt(`Los datos del usuario ingresado son:
+                    // ID: ${usuarioAModificar}    
+                    // Nombre: ${nombreModificado} 
+                    // Teléfono: ${telefonoModificado} 
+                    // email: ${emailModificado}
+                    // Desea confirmar los cambios SI/NO ?
+                    // `);
+                    // respuesta = respuesta.toUpperCase();
+                    // if (respuesta == "SI") {
+                    //     listaUsuarios[i] = nuevoUsuario;
+                    //     alert("La operacion ha sido realizada exitosamente");
+                    // } else {
+                    //     alert("La operacion ha sido cancelada");
+                    // }
                 }
             }
 
