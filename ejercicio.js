@@ -10,9 +10,9 @@ let nombre = [];
 let telefono = [];
 let email = [];
 let accion;
+let volverAlMenuPrincipal = "SI";
 
-
-do {
+while (volverAlMenuPrincipal == "SI") {
     accion = prompt(`✅ Seleccione una operacion 
       --------------------------
       ➡️ [AGREGAR] un usuario 👤
@@ -192,8 +192,8 @@ do {
                                 `)
                             }
                             break;
-                         case "EMAIL":   
-                         let nuevoMail = prompt(`Ingrese el nuevo email`);
+                        case "EMAIL":
+                            let nuevoMail = prompt(`Ingrese el nuevo email`);
                             let confirmaMail = prompt(`El email ingresado es ${nuevoMail}. Desea confirmar el cambio SI/NO?`)
                             confirmaMail = confirmaMail.toUpperCase()
                             if (confirmaMail == 'SI') {
@@ -206,27 +206,11 @@ do {
                                 `)
                             }
                             break;
-                            default: alert(`No se reconoce el campo a modificar`);
-                           
+                        default:
+                            alert(`No se reconoce el campo a modificar`);
+
                     }
-                    // let nombreModificado = prompt(" 📓 Ingrese el nombre del usuario");
-                    // let telefonoModificado = prompt(" 📞 Ingrese el teléfono del usuario");
-                    // let emailModificado = prompt(" 📫 Ingrese email del usuario");
-                    // let nuevoUsuario = [usuarioAModificar, nombreModificado, telefonoModificado, emailModificado];
-                    // let respuesta = prompt(`Los datos del usuario ingresado son:
-                    // ID: ${usuarioAModificar}    
-                    // Nombre: ${nombreModificado} 
-                    // Teléfono: ${telefonoModificado} 
-                    // email: ${emailModificado}
-                    // Desea confirmar los cambios SI/NO ?
-                    // `);
-                    // respuesta = respuesta.toUpperCase();
-                    // if (respuesta == "SI") {
-                    //     listaUsuarios[i] = nuevoUsuario;
-                    //     alert("La operacion ha sido realizada exitosamente");
-                    // } else {
-                    //     alert("La operacion ha sido cancelada");
-                    // }
+
                 }
             }
 
@@ -250,7 +234,5 @@ do {
         };
     };
 }
-while (accion != "SALIR")
-// ...............SALIR..............
 
 console.log(listaUsuarios)
