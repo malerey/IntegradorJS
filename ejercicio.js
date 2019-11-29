@@ -1,3 +1,14 @@
+
+// Observaciones generales
+
+// Excelente trabajo.
+// Gran uso de variables, codigo muy claro y facil de leer. 
+// Se nota el esfuerzo por mejorarlo y hacerlo mantenible. 
+
+// Hay algunas cositas, detalles a mejorar que les menciono a lo largo del codigo, pero nada demasiado grave
+// Salvo el error que explico en la linea 92, que podria haber tenido consecuencias mas graves
+
+
 let listaUsuarios = [
     [0, "Carla", "1545628984", "carla@gmail.com"],
     [1, "Pedro", "1545251245", "pedro@gmail.com"],
@@ -6,6 +17,10 @@ let listaUsuarios = [
 ];
 
 let id = listaUsuarios.length;
+// Nombre, telefono e email eventualmente seran reemplazados por strings
+// Por ese motivo, es mas claro para alguien que lee nuestro codigo que los definamos inicialmente
+// como strings vacios, y no como arrays vacios. Ejemplo:
+// let nombre = "";
 let nombre = [];
 let telefono = [];
 let email = [];
@@ -28,6 +43,9 @@ while (volverAlMenuPrincipal == "SI") {
     //...............AGREGAR..............
 
     if (accion == "AGREGAR") {
+        // esta variable se declara en todos los if - quiza habria sido mejor
+        // declararla afuera, como variable global, e ir asignandole valor
+        // en cada if. 
         let repetirOperacion = "SI";
 
         while (repetirOperacion == "SI") {
@@ -59,6 +77,9 @@ while (volverAlMenuPrincipal == "SI") {
 
     //...............OBTENER..............
 
+
+    // esto deberia ser un else if, no un if desconectado del anterior. 
+
     if (accion == "OBTENER") {
 
         let repetirOperacion = "SI";
@@ -68,6 +89,18 @@ while (volverAlMenuPrincipal == "SI") {
             let tipoDeDato = prompt(`Buscar por ID, Nombre, Celular o Email?`);
             let valorABuscar = prompt(`Ingresar el valor a buscar`);
 
+            // aqui hay un error, aunque no tiene consecuencias graves
+            // la condicion del if deberia ser:
+            // tipoDeDato == "ID" || tipoDeDato ==  "Nombre" || tipoDeDato ==  "Celular" || tipoDeDato == "Email"
+            // para chequear si el usuario escribió efectivamente una de las 4 opciones
+            // Tal como esta ahora, este if SIEMPRE da true, ya que si tipoDeDato no es igual a ID, 
+            // la cadena devuelve "Nombre". (en lugar de devolver true o false)
+            // Como "Nombre" siempre se interpreta como true, escribamos lo que escribamos en tipoDeDato, 
+            // siempre vamos a entrar a este if. 
+            // Pueden probarlo respondiendo "asdfgh" en el prompt y ver que igual la busqueda se realiza. 
+            // Si no queda clara la explicacion no dejen de escribirme
+            // Por ahora, recuerden que cuando usamos || y && tenemos que escribir SIEMPRE los dos terminos
+            // de la comparacion
             if (tipoDeDato == "ID" || "Nombre" || "Celular" || "Email") {
                 for (let i = 0; i < listaUsuarios.length; i++) {
                     for (let j = 0; j < listaUsuarios[i].length; j++) {
@@ -211,4 +244,7 @@ while (volverAlMenuPrincipal == "SI") {
     };
 }
 
+// recuerden siempre borrar los console log de su codigo antes de entregarlo
+// los console log son muy utiles para la etapa de desarrollo, pero no deben estar nunca en un 
+// codigo que pueda ver un usuario 
 console.log(listaUsuarios)
