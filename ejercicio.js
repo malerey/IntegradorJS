@@ -13,6 +13,7 @@ let accion;
 let volverAlMenuPrincipal = "SI";
 
 while (volverAlMenuPrincipal == "SI") {
+  let repetirOperacion = "SI"
     accion = prompt(`✅ Seleccione una operacion 
       --------------------------
       ➡️ [AGREGAR] un usuario 👤
@@ -28,7 +29,6 @@ while (volverAlMenuPrincipal == "SI") {
     //...............AGREGAR..............
 
     if (accion == "AGREGAR") {
-        let repetirOperacion = "SI";
 
         while (repetirOperacion == "SI") {
             nombre = prompt(" 📓 Ingrese el nombre del usuario");
@@ -58,8 +58,6 @@ while (volverAlMenuPrincipal == "SI") {
 
     if (accion == "OBTENER") {
 
-        let repetirOperacion = "SI";
-        repetirOperacion = repetirOperacion.toUpperCase()
         let usuarioEncontrado = false;
         while (repetirOperacion == 'SI') {
             let tipoDeDato = prompt(`Buscar por ID, Nombre, Celular o Email?`);
@@ -104,8 +102,7 @@ while (volverAlMenuPrincipal == "SI") {
 
 
     if (accion == "ELIMINAR") {
-        let repetirOperacion = "SI";
-        repetirOperacion = repetirOperacion.toUpperCase()
+
         let usuarioEncontrado = false;
         while (repetirOperacion == "SI") {
             let usuarioAEliminar = prompt("Indique el ID del usuario que desea eliminar");
@@ -137,7 +134,6 @@ while (volverAlMenuPrincipal == "SI") {
     //...............MODIFICAR..............
 
     if (accion == "MODIFICAR") {
-        let repetirOperacion = "SI";
 
         let usuarioEncontrado = false;
         while (repetirOperacion == "SI") {
